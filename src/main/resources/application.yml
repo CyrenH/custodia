@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: custodia
+
+  jpa:
+    hibernate:
+      ddl-auto: validate   # never let Hibernate auto-generate schema — Flyway owns that
+    open-in-view: false     # avoid the anti-pattern of lazy-loading in the view layer
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+jwt:
+  expiration-ms: ${JWT_EXPIRATION_MS:3600000}
+
+logging:
+  level:
+    root: INFO
+    io.github.cyrenh.custodia: DEBUG

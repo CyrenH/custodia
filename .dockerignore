@@ -1,0 +1,33 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.idea
+.vscode
+*.iml
+out/
+
+# Build output
+target
+**/target
+
+# Docs
+*.md
+
+# Docker itself (not needed inside the build context)
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Secrets / local config — must never enter the build context
+.env
+.env.local
+application-local.yml
+application-local.yaml
+application-local.properties
+
+# OS
+.DS_Store
+Thumbs.db

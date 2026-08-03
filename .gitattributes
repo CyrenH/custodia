@@ -1,0 +1,29 @@
+# Auto-detect text files and normalize line endings to LF by default
+* text=auto eol=lf
+
+# Source code — always LF
+*.java text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.properties text eol=lf
+*.sql text eol=lf
+*.md text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+*.dockerignore text eol=lf
+Dockerfile text eol=lf
+
+# Maven wrapper — Unix script needs LF, Windows batch needs CRLF
+/mvnw text eol=lf
+*.cmd text eol=crlf
+
+# Binary files — never touch line endings, never diff as text
+*.jar binary
+*.class binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
